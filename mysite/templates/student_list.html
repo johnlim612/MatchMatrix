@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block css %}
+<link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/student_list.css') }}">
+{% endblock %}
+
+{% block title %}Student List{% endblock %}
+
+{% block content %}
+
+<br>
+<h3>Student Pool</h3>
+
+<ul id="student-list">
+    {% for student in players %}
+    <li class="student-item">
+        <span class="student-name {% if student.loss_streak > 4 %}highlight-red{% elif student.loss_streak > 2 %}highlight-orange{% endif %}">{{ student.name }} :  {{ student.rating }}</span>
+        <span class="student-info"> {{ student.role }} </span>
+        <button class="btn btn-secondary delete-btn" type="button" data-player="{{ student.name }}">Delete</button>
+    </li>
+    {% endfor %}
+</ul>
+
+<script>
+$(document).ready(function() {
+    $('.delete-btn').click(function() {
+        var $deleteButton = $(this);
+        var playerName = $deleteButton.data('player');
+
+        // Display a confirmation dialog
+        var confirmDelete = confirm('Are you sure you want to delete ' + playerName + '?');
+
+        // Check if user confirmed deletion
+        if (confirmDelete) {
+            $.ajax({
+                url: '/delete_player',
+                type: 'POST',
+                contentType: 'application/x-www-form-urlencoded',
+                data: { player_name: playerName },
+                success: function(response) {
+                    alert(playerName + response)
+
+                    // Retrieve the parent <li> element of the delete button
+                    var $liElement = $deleteButton.closest('li');
+
+                    // Remove the <li> element from the DOM
+                    $liElement.remove();
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                    // Handle error responses
+                }
+            });
+        };
+    });
+});
+</script>
+{% endblock %}
+

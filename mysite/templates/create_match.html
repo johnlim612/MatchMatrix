@@ -1,0 +1,257 @@
+{% extends "base.html" %}
+{% block title %} Create Match{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/create_match.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<input class="search-box" placeholder="Search Name" required>
+<button type="button" class="btn btn-primary" onclick=create_teams()>Create match</button>
+<button type="button" class="btn btn-primary" onclick=add_new_team()>Custom Match</button>
+
+<!-- Search Results -->
+<div class="results list-group"></div>
+
+<div class="d-flex flex-wrap">
+    {% for student in players %}
+        <button class="p-2 student-cell btn-primary" id="student-btn-{{ loop.index }}" draggable="true" ondragstart="drag(event)">{{student.name}}</button>
+    {% endfor %}
+</div>
+
+
+<!-- Full Player List -->
+<div><br>Selected Debaters</div>
+<ul id="active-player-list" class="list-group"></ul>
+</br></br>
+
+<!-- team list -->
+<div class="container-fluid team-container">
+</div>
+
+<br><br><button class="btn btn-primary btn-lg submit-results">Submit Results</button>
+<p class="last-submitted">Last Submitted {{last_submitted}}</p>
+
+<script>
+$(document).ready(function() {
+    let debounce;
+    $('.search-box').on('keydown', function (e) {
+        clearTimeout(debounce)
+        debounce = setTimeout(() => {
+            getAutoComplete();
+        }, 300)
+    })
+
+    $('.search-box').on('keypress', function(e) {
+        if (e.which === 13) { // 13 is the key code for Enter
+            e.preventDefault(); // Prevent form submission
+            const results = $('.results').find('.list-group-item');
+            if (results.length === 1) {
+                addPlayerToGame(results[0]); // Automatically add the player to the game
+            }
+        }
+    })
+
+    $(".student-cell").click(function(e) {
+        addPlayerToGame(this);
+        // $('#active-player-list').append(`<li class="list-group-item">${this.innerHTML}</li>`)
+    });
+});
+
+function getAutoComplete() {
+    const query = $('.search-box').val();
+    if (!query) {
+        $('.results').empty();
+        return
+    }
+
+    $.ajax({
+        url: `/search?search_term=${query}`,
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            $('.results').empty();
+            for (let i = 0; i < data.length; i++)
+            {
+                $('.results').append(`<a href="#" class="list-group-item list-group-item-action" onclick=addPlayerToGame(this)>${data[i]}</a>`)
+            }
+        },
+        error: function(error) {
+            console.error('Error ', error)
+        }
+    })
+}
+
+
+function addPlayerToGame(name) {
+    $('.results').empty();
+    $('.search-box').val("");
+    $('#active-player-list').append(`<li class="list-group-item" onclick=remove_element(this)>${name.innerHTML}</li>`)
+}
+
+
+function create_teams() {
+    var player_query = $('#active-player-list li').map(function() {
+        return this.textContent.trim();
+    }).get();
+
+    const player_querys = splitList(player_query)
+    console.log(player_querys);
+
+    player_querys.forEach(create_team);
+}
+
+
+function create_team(player_query) {
+    $.ajax({
+        url: `/create_teams?added_players=${JSON.stringify(player_query)}`,
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            add_new_team();
+
+            for (let i = 0; i < data[0].length; i++)
+            {
+                $('.team-a').append(`<div class="list-group-item name-item">${data[0][i]['name']}</div>`)
+            }
+
+            for (let i = 0; i < data[1].length; i++)
+            {
+                $('.team-b').append(`<div class="list-group-item name-item">${data[1][i]['name']}</div>`)
+            }
+            reset_teams();
+        },
+        error: function(error) {
+            console.error('Error ', error)
+        }
+    })
+}
+
+
+function splitList(list) {
+
+    // Shuffle the copied list randomly
+    for (let i = list.length - 1; i > 0; i--) {
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        [list[i], list[randomIndex]] = [list[randomIndex], list[i]];
+    }
+
+    let team_count = Math.ceil(list.length / 6);
+    const chunkSize = Math.ceil(list.length / team_count);
+    const result = [];
+
+    for (let i = 0; i < list.length; i += chunkSize) {
+        result.push(list.slice(i, i + chunkSize));
+    }
+    return result;
+}
+
+
+function add_new_team() {
+    var team_headers = '<div class="row match"><div class="col-sm" ondrop="drop(event)" ondragover="allowDrop(event)"><div class="list-group-item team-text" style="background-color:rgb(175,172,251);">Team A<input type="checkbox" class="winning-team-checkbox" name="winning-team" value="team-a"></div><div class="team-a team-a-players"></div></div><div class="vs-text">VS</div><div class="col-sm"  ondrop="drop(event)" ondragover="allowDrop(event)"><div class="list-group-item team-text" style="background-color:#FFEBFF;">Team B<input type="checkbox" class="winning-team-checkbox" name="winning-team" value="team-b"></div><div class="team-b team-b-players"></div></div></div><br>';
+    $('.team-container').append(team_headers);
+}
+
+
+function add_custom_match() {
+    var team_headers = '<div class="row match"><div class="col-sm" ondrop="drop(event)" ondragover="allowDrop(event)"><div class="list-group-item team-text" style="background-color:rgb(175,172,251);">Team A<input type="checkbox" class="winning-team-checkbox" name="winning-team" value="team-a"></div><div class="team-a team-a-players"></div></div><div class="vs-text">VS</div><div class="col-sm"  ondrop="drop(event)" ondragover="allowDrop(event)"><div class="list-group-item team-text" style="background-color:#FFEBFF;">Team B<input type="checkbox" class="winning-team-checkbox" name="winning-team" value="team-b"></div><div class="team-b team-b-players"></div></div></div><br>';
+    $('.team-container').append(team_headers);
+}
+
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+
+function drag(ev) {
+    ev.dataTransfer.setData("dragged_player", ev.target.id);
+}
+
+
+function drop(ev) {
+    ev.preventDefault();
+    let data = ev.dataTransfer.getData("dragged_player");
+    let name = document.getElementById(data).innerHTML;
+
+    let newDiv = document.createElement('div');
+    newDiv.className = 'list-group-item name-item';
+    newDiv.textContent = name;
+
+    let target = $(ev.target).closest('.col-sm');
+    let teamBox = target.find('.team-a-players, .team-b-players').first();
+    teamBox.append(newDiv);
+}
+
+
+function remove_element(el) {
+    var element = el;
+    element.remove();
+}
+
+
+function reset_teams() {
+    // unlink team list classes for new teams
+    $('.team-a').addClass('old-a').removeClass('team-a');
+    $('.team-b').addClass('old-b').removeClass('team-b');
+    $('#active-player-list').empty();
+}
+
+
+$('.submit-results').on('click', function() {
+
+    var validSelection = true; // Flag to track if the selection is valid
+    var allWinningTeamPlayers = [];
+    var allLosingTeamPlayers = [];
+
+    $('.match').each(function() {
+        var winningTeamCheckbox = $(this).find('.winning-team-checkbox:checked');
+        if (winningTeamCheckbox.length !== 1) {
+            validSelection = false;
+            alert('Please select one winning team for each match.');
+            return false; // Exit the loop early if the selection is invalid
+        }
+
+        var winningTeam = winningTeamCheckbox.val();
+        var losingTeam = $(this).find('.winning-team-checkbox:not(:checked)').val();
+        var winningTeamPlayers = $(this).find('.' + winningTeam + '-players').find('div').map(function() {
+            return $(this).text().trim()
+        }).get();
+        var losingTeamPlayers = $(this).find('.' + losingTeam + '-players').find('div').map(function() {
+            return $(this).text().trim()
+        }).get();
+
+        allWinningTeamPlayers = allWinningTeamPlayers.concat(winningTeamPlayers);
+        allLosingTeamPlayers = allLosingTeamPlayers.concat(losingTeamPlayers);
+        console.log(allWinningTeamPlayers)
+
+    });
+
+    if (!validSelection) {
+        return; // Don't proceed further if the selection is invalid
+    }
+
+    // Send the selected winning teams for all matches to the server
+    $.ajax({
+        url: '/submit-results',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify({
+            winningPlayers: allWinningTeamPlayers,
+            losingPlayers: allLosingTeamPlayers
+        }),
+        success: function(response) {
+            alert('Match results submitted successfully.');
+            console.log('Server response:', response);
+            // Add any additional logic here, if needed
+        },
+        error: function(xhr, status, error) {
+            console.error('Error:', error);
+            alert('Failed to submit match results. Please try again.');
+        }
+    });
+});
+
+</script>
+{% endblock %}

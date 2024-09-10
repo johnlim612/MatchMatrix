@@ -1,0 +1,170 @@
+[
+    {
+        "name": "William",
+        "rating": 1463.044375,
+        "role": 1,
+        "role2": 2,
+        "loss_streak": 2
+    },
+    {
+        "name": "Emily",
+        "rating": 1513.156875,
+        "role": 3,
+        "role2": 0,
+        "loss_streak": 0
+    },
+    {
+        "name": "Connor",
+        "rating": 1490.1054546254168,
+        "role": 1,
+        "role2": 0,
+        "loss_streak": 0
+    },
+    {
+        "name": "Jieming",
+        "rating": 1453.18476875,
+        "role": 1,
+        "role2": 0,
+        "loss_streak": 1
+    },
+    {
+        "name": "Andrea",
+        "rating": 1287.26664375,
+        "role": 2,
+        "role2": 3,
+        "loss_streak": 2
+    },
+    {
+        "name": "Andy",
+        "rating": 1174.3757164583333,
+        "role": 1,
+        "role2": 0,
+        "loss_streak": 0
+    },
+    {
+        "name": "Hannah",
+        "rating": 1030.0,
+        "role": 2,
+        "role2": 0,
+        "loss_streak": 0
+    },
+    {
+        "name": "Bryan",
+        "rating": 924.75,
+        "role": 0,
+        "role2": 0,
+        "loss_streak": 0
+    },
+    {
+        "name": "Jacob",
+        "rating": 1037.9132164583334,
+        "role": 0,
+        "role2": 0,
+        "loss_streak": 0
+    },
+    {
+        "name": "Andrew",
+        "rating": 1146.099464125,
+        "role": 0,
+        "role2": 0,
+        "loss_streak": 1
+    },
+    {
+        "name": "Ernest",
+        "rating": 1140.0229546254168,
+        "role": 0,
+        "role2": 0,
+        "loss_streak": 0
+    },
+    {
+        "name": "Amanda",
+        "rating": 1043.425,
+        "role": 2,
+        "role2": 0,
+        "loss_streak": 3
+    },
+    {
+        "name": "David",
+        "rating": 640,
+        "role": 0,
+        "role2": 0,
+        "loss_streak": 1
+    },
+    {
+        "name": "Caydon",
+        "rating": 670.0,
+        "role": 0,
+        "role2": 0,
+        "loss_streak": 1
+    },
+    {
+        "name": "Kate",
+        "rating": 620,
+        "role": 1,
+        "role2": 0,
+        "loss_streak": 0
+    },
+    {
+        "name": "Harman",
+        "rating": 877.5572666666667,
+        "role": 1,
+        "role2": 0,
+        "loss_streak": 1
+    },
+    {
+        "name": "Christian",
+        "rating": 976.09846,
+        "role": 0,
+        "role2": 0,
+        "loss_streak": 0
+    },
+    {
+        "name": "Irene",
+        "rating": 916.2572666666667,
+        "role": 0,
+        "role2": 0,
+        "loss_streak": 1
+    },
+    {
+        "name": "Ellie",
+        "rating": 1212.674464125,
+        "role": 1,
+        "role2": 0,
+        "loss_streak": 2
+    },
+    {
+        "name": "Kaden",
+        "rating": 1288,
+        "role": 2,
+        "role2": 3,
+        "loss_streak": 0
+    },
+    {
+        "name": "Nathan",
+        "rating": 962.0313414583333,
+        "role": 3,
+        "role2": 2,
+        "loss_streak": 0
+    },
+    {
+        "name": "Antra",
+        "rating": 1111.39846,
+        "role": 2,
+        "role2": 1,
+        "loss_streak": 0
+    },
+    {
+        "name": "Angelina",
+        "rating": 742.0,
+        "role": 2,
+        "role2": 3,
+        "loss_streak": 0
+    },
+    {
+        "name": "Catherine",
+        "rating": 805.82946,
+        "role": 1,
+        "role2": 2,
+        "loss_streak": 0
+    }
+]

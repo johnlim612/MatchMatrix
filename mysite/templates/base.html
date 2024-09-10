@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet'>
+    {% block css %} {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+
+    <style>
+
+    nav {
+        padding: 1.5vh 4rem 1.5vh 4rem !important;
+        background-color: white;
+        margin-bottom: 3vh
+
+    }
+
+    .items {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .items a:link {
+        text-decoration: none;
+        color: black;
+        font-size: 1.1rem;
+    }
+    .items a:hover {
+        color: red;
+    }
+
+    .items a:visited {
+      color:black;
+    }
+
+    body {
+        font-family: 'Questrial', Georgia, "Times New Roman", Times, serif;
+        color: Black;
+        background-color: #F0FFFF;
+    }
+
+    </style>
+</head>
+
+<body>
+    <header class="page-header">
+
+            <nav class="navbar navbar-light">
+                <a class="navbar-brand" href="/">
+                    <img width="30" height="30" class="d-inline-block align-top" alt="" src="https://em-content.zobj.net/source/apple/76/flexed-biceps_1f4aa.png">
+                    <span style="font-size: 1em;"><b>Alannah Debates</b></span>
+                </a>
+                <div class="items">
+                <a href="/">Home</a>
+                <a href="/list_students">Student Pool</a>
+                <a href="/new">Create New Student</a>
+                </div>
+            </nav>
+
+    </header>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </main>
+</body>
+</html>
