@@ -1,5 +1,5 @@
-import FileManager
-import PlayerManager
+from app import FileManager
+from app import PlayerManager
 
 def SubmitNewStudent(player_data):
     player_data['role'] = int(player_data.get('role', 0))
