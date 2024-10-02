@@ -4,10 +4,14 @@ from app import FileManager
 def role_to_text(players):
     for _, player in players:
         match player["role"]:
-            case 1: player["role"] = "speaker 1"
-            case 2: player["role"] = "speaker 2"
-            case 3: player["role"] = "speaker 3"
-            case _: player["role"] = "fill"
+            case 1:
+                player["role"] = "speaker 1"
+            case 2:
+                player["role"] = "speaker 2"
+            case 3:
+                player["role"] = "speaker 3"
+            case _:
+                player["role"] = "fill"
         player["rating"] = round(player["rating"])
     return players
 
@@ -76,7 +80,9 @@ def list_players(sort_alpha=False):
 
 def get_players_by_names(player_list):
     player_data = FileManager.open_player_data()
-    named_players = {name: player_data[name] for name in player_list if name in player_data}
+    named_players = {
+        name: player_data[name] for name in player_list if name in player_data
+    }
     return named_players
 
 

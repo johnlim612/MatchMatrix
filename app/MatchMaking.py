@@ -87,7 +87,11 @@ def calculate_rating_change(team_rating_diff, is_winning_team: bool):
     BASE_RATING_GAIN = 50
     # rating_change = (BASE_RATING_GAIN + (player["rating"] - average_enemy_rating) * (-1 / 10))
     rating_change = BASE_RATING_GAIN + team_rating_diff * (-1 / 10)
-    return max(20, min(rating_change, 200)) if is_winning_team else min(-20, max(rating_change, -200))
+    return (
+        max(20, min(rating_change, 200))
+        if is_winning_team
+        else min(-20, max(rating_change, -200))
+    )
 
 
 def get_average_rating(player_list):
@@ -107,7 +111,7 @@ def update_players_ratings(winning_player_names, losing_player_names):
 
     losing_avg = get_average_rating(losing_players)
     winning_avg = get_average_rating(winning_players)
-    
+
     team_rating_diff = winning_avg - losing_avg
 
     winning_rating_change = calculate_rating_change(team_rating_diff, True)
@@ -121,5 +125,3 @@ def update_players_ratings(winning_player_names, losing_player_names):
     for player in losing_players.values():
         update_player_rating(player, losing_rating_change, False)
         PlayerManager.update_players_data(losing_players)
-
-   
