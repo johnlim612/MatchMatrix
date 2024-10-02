@@ -13,8 +13,8 @@ def open_player_data():
     with open(player_data_path, "r") as f:
         try:
             data = json.load(f)
-        except:
-            print("error with opening player data or is empty")
+        except (FileNotFoundError, json.JSONDecodeError):
+            print("Error: File not found or invalid JSON.")
         return data
 
 
@@ -22,12 +22,12 @@ def open_last_submitted_data():
     with open(last_updated_path, "r") as f:
         try:
             data = f.read()
-        except:
+        except (FileNotFoundError, json.JSONDecodeError):
             print("error with opening last submitted data or is empty")
         return data
 
 
-def update_player_data(data):
+def save_player_data(data):
     with open(player_data_path, "w") as f:
         json.dump(data, f, indent=4)
 

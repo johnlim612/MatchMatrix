@@ -11,11 +11,11 @@
 <h3>Student Pool</h3>
 
 <ul id="student-list">
-    {% for student in players %}
+    {% for name, data in players.items() %}
     <li class="student-item">
-        <span class="student-name {% if student.loss_streak > 4 %}highlight-red{% elif student.loss_streak > 2 %}highlight-orange{% endif %}">{{ student.name }} :  {{ student.rating }}</span>
-        <span class="student-info"> {{ student.role }} </span>
-        <button class="btn btn-secondary delete-btn" type="button" data-player="{{ student.name }}">Delete</button>
+        <span class="student-name {% if data.loss_streak > 4 %}highlight-red{% elif data.loss_streak > 2 %}highlight-orange{% endif %}">{{ name }} :  {{ data.rating }}</span>
+        <span class="student-info"> {{ data.role }} </span>
+        <button class="btn btn-secondary delete-btn" type="button" data-player="{{ name }}">Delete</button>
     </li>
     {% endfor %}
 </ul>

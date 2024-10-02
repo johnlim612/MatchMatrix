@@ -4,6 +4,7 @@ import json
 
 playerDataFilePath = os.path.abspath("PlayerData.json")
 
+
 def SubmitNewStudent(data):
     print("form data: ", data)
     try:
