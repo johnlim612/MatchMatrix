@@ -1,42 +1,50 @@
 from flask import Blueprint, render_template, request, jsonify
 from app import MatchMaking
+from app import PlayerManager
 from app import FileManager
 import json
 
 main = Blueprint('main', __name__, template_folder='templates')
 
+
 @main.route('/', methods=["GET"])
 def upload():
-    player_list = MatchMaking.list_players(True)
+    player_list = PlayerManager.list_players(True)
     last_submitted_data = FileManager.open_last_submitted_data()
-    return render_template("create_match.html", players=player_list, last_submitted = last_submitted_data)
+    return render_template("create_match.html", players=player_list, last_submitted=last_submitted_data)
+
 
 @main.route('/list_students', methods=["GET"])
 def upload_student_list():
-    player_list = MatchMaking.list_players()
+    player_list = PlayerManager.list_players()
     return render_template("student_list.html", players=player_list)
+
 
 @main.route('/delete_player', methods=["POST"])
 def delete_player():
     player_name = request.form.get("player_name")
-    MatchMaking.delete_player(player_name)
+    PlayerManager.delete_player(player_name)
     return "deleted successfully", 200
+
 
 @main.route("/search", methods=["GET"])
 def search_name():
     search_term = request.args.get('search_term', '').lower()
-    result_names = MatchMaking.search_player(search_term)
+    result_names = PlayerManager.search_player(search_term)
     return jsonify(result_names)
+
 
 @main.route('/new')
 def upload_new_student_form():
     return render_template("new_student.html")
 
+
 @main.route('/submit_student_form', methods=['POST'])
 def submit_student():
     data = request.form.to_dict()
-    MatchMaking.SubmitNewStudent(data)
+    PlayerManager.SubmitNewStudent(data)
     return render_template("create_match.html")
+
 
 @main.route('/create_teams', methods=["GET"])
 def create_team():
@@ -45,6 +53,7 @@ def create_team():
 
     team1, team2 = MatchMaking.create_teams(player_list)
     return jsonify(team1, team2)
+
 
 @main.route('/submit-results', methods=['POST'])
 def submit_results():

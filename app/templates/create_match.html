@@ -15,8 +15,8 @@
 <div class="results list-group"></div>
 
 <div class="d-flex flex-wrap">
-    {% for student in players %}
-        <button class="p-2 student-cell btn-primary" id="student-btn-{{ loop.index }}" draggable="true" ondragstart="drag(event)">{{student.name}}</button>
+    {% for name in players %}
+        <button class="p-2 student-cell btn-primary" id="student-btn-{{ loop.index }}" draggable="true" ondragstart="drag(event)">{{name}}</button>
     {% endfor %}
 </div>
 

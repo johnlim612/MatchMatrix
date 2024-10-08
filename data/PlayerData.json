@@ -3,144 +3,168 @@
         "rating": 1463.044375,
         "role": 1,
         "role2": 2,
-        "loss_streak": 2
+        "loss_streak": 2,
+        "name": "William"
     },
     "Emily": {
         "rating": 1513.156875,
         "role": 3,
         "role2": 0,
-        "loss_streak": 0
+        "loss_streak": 0,
+        "name": "Emily"
     },
     "Connor": {
         "rating": 1490.1054546254168,
         "role": 1,
         "role2": 0,
-        "loss_streak": 0
+        "loss_streak": 0,
+        "name": "Connor"
     },
     "Jieming": {
         "rating": 1453.18476875,
         "role": 1,
         "role2": 0,
-        "loss_streak": 1
+        "loss_streak": 1,
+        "name": "Jieming"
     },
     "Andrea": {
         "rating": 1287.26664375,
         "role": 2,
         "role2": 3,
-        "loss_streak": 2
+        "loss_streak": 2,
+        "name": "Andrea"
     },
     "Andy": {
         "rating": 1174.3757164583333,
         "role": 1,
         "role2": 0,
-        "loss_streak": 0
+        "loss_streak": 0,
+        "name": "Andy"
     },
     "Hannah": {
         "rating": 1030.0,
         "role": 2,
         "role2": 0,
-        "loss_streak": 0
+        "loss_streak": 0,
+        "name": "Hannah"
     },
     "Bryan": {
         "rating": 924.75,
         "role": 0,
         "role2": 0,
-        "loss_streak": 0
+        "loss_streak": 0,
+        "name": "Bryan"
     },
     "Jacob": {
         "rating": 1037.9132164583334,
         "role": 0,
         "role2": 0,
-        "loss_streak": 0
+        "loss_streak": 0,
+        "name": "Jacob"
     },
     "Andrew": {
         "rating": 1146.099464125,
         "role": 0,
         "role2": 0,
-        "loss_streak": 1
+        "loss_streak": 1,
+        "name": "Andrew"
     },
     "Ernest": {
         "rating": 1140.0229546254168,
         "role": 0,
         "role2": 0,
-        "loss_streak": 0
+        "loss_streak": 0,
+        "name": "Ernest"
     },
     "Amanda": {
         "rating": 1043.425,
         "role": 2,
         "role2": 0,
-        "loss_streak": 3
+        "loss_streak": 3,
+        "name": "Amanda"
     },
     "David": {
         "rating": 640,
         "role": 0,
         "role2": 0,
-        "loss_streak": 1
+        "loss_streak": 1,
+        "name": "David"
     },
     "Caydon": {
         "rating": 670.0,
         "role": 0,
         "role2": 0,
-        "loss_streak": 1
+        "loss_streak": 1,
+        "name": "Caydon"
     },
     "Kate": {
         "rating": 620,
         "role": 1,
         "role2": 0,
-        "loss_streak": 0
+        "loss_streak": 0,
+        "name": "Kate"
     },
     "Harman": {
         "rating": 877.5572666666667,
         "role": 1,
         "role2": 0,
-        "loss_streak": 1
+        "loss_streak": 1,
+        "name": "Harman"
     },
     "Christian": {
         "rating": 976.09846,
         "role": 0,
         "role2": 0,
-        "loss_streak": 0
+        "loss_streak": 0,
+        "name": "Christian"
     },
     "Irene": {
         "rating": 916.2572666666667,
         "role": 0,
         "role2": 0,
-        "loss_streak": 1
+        "loss_streak": 1,
+        "name": "Irene"
     },
     "Ellie": {
         "rating": 1212.674464125,
         "role": 1,
         "role2": 0,
-        "loss_streak": 2
+        "loss_streak": 2,
+        "name": "Ellie"
     },
     "Kaden": {
         "rating": 1288,
         "role": 2,
         "role2": 3,
-        "loss_streak": 0
+        "loss_streak": 0,
+        "name": "Kaden"
     },
     "Nathan": {
         "rating": 962.0313414583333,
         "role": 3,
         "role2": 2,
-        "loss_streak": 0
+        "loss_streak": 0,
+        "name": "Nathan"
     },
     "Antra": {
         "rating": 1111.39846,
         "role": 2,
         "role2": 1,
-        "loss_streak": 0
+        "loss_streak": 0,
+        "name": "Antra"
     },
     "Angelina": {
         "rating": 742.0,
         "role": 2,
         "role2": 3,
-        "loss_streak": 0
+        "loss_streak": 0,
+        "name": "Angelina"
     },
     "Catherine": {
         "rating": 805.82946,
         "role": 1,
         "role2": 2,
-        "loss_streak": 0
+        "loss_streak": 0,
+        "name": "Catherine"
     }
 }

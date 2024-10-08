@@ -40,3 +40,10 @@ def update_last_submitted():
 
     with open(last_updated_path, "w") as f:
         f.write(dt_string)
+
+
+def add_player_names():
+    player_data = open_player_data()
+    for name, data in player_data.items():
+        data["name"] = name
+    save_player_data(player_data)
