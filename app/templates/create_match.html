@@ -96,9 +96,8 @@ function create_teams() {
         return this.textContent.trim();
     }).get();
 
+    // for creating team size, needs fixing
     const player_querys = splitList(player_query)
-    console.log(player_querys);
-
     player_querys.forEach(create_team);
 }
 

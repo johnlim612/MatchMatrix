@@ -51,7 +51,7 @@ def create_team():
     player_list_json = request.args.get('added_players')
     player_list = json.loads(player_list_json)
 
-    team1, team2 = MatchMaking.create_teams(player_list)
+    team1, team2 = MatchMaking.get_balanced_teams(player_list)
     return jsonify(team1, team2)
 
 

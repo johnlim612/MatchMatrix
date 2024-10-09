@@ -9,7 +9,6 @@ last_updated_path = os.path.join(DATA_FOLDER, "LastUpdated.txt")
 
 
 def open_player_data():
-    print(f"Full path to PlayerData.json: {player_data_path}")
     with open(player_data_path, "r") as f:
         try:
             data = json.load(f)
