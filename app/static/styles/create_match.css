@@ -80,8 +80,7 @@ button:hover {
 	--iterations: 1;
 }
 
-.vs-text,
-.vs-text::after {
+.vs-text, .vs-text::after {
 	animation-delay: var(--animation-delay, 2s);
 	animation-iteration-count: var(--iterations, 1);
 	animation-duration: var(--duration, 800ms);

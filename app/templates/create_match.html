@@ -253,7 +253,7 @@
             success: function (response) {
                 alert('Match results submitted successfully.');
                 console.log('Server response:', response);
-                // Add any additional logic here, if needed
+                window.location.reload();
             },
             error: function (xhr, status, error) {
                 console.error('Error:', error);
