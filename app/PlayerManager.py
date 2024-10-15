@@ -3,6 +3,7 @@ from app.player import Player
 
 
 def role_to_text(players):
+    # replaces player's role value with string
     for player in players:
         match player["role"]:
             case 1:
@@ -63,7 +64,7 @@ def delete_player(name):
     FileManager.save_player_data(playerData)
 
 
-def list_players(sort_alpha=False):
+def list_players(sort_alpha=False) -> list[Player]:
     player_data = FileManager.open_player_data()
 
     if sort_alpha:
@@ -108,6 +109,3 @@ def load_players_from_json(json_data):
 def get_players_by_names(names: list) -> list[Player]:
     players = load_players_from_json(FileManager.open_player_data())
     return [players[name] for name in names if name in players]
-
-# def save_players_to_json(players):
-#     return {name: player.to_dict() for name, player in players.items()}

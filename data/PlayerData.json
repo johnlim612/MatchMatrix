@@ -14,7 +14,7 @@
         "name": "Emily"
     },
     "Connor": {
-        "rating": 1490.1054546254168,
+        "rating": 1526,
         "role": 1,
         "role2": 0,
         "loss_streak": 0,
@@ -56,10 +56,10 @@
         "name": "Bryan"
     },
     "Jacob": {
-        "rating": 1037.9132164583334,
+        "rating": 1018,
         "role": 0,
         "role2": 0,
-        "loss_streak": 0,
+        "loss_streak": 1,
         "name": "Jacob"
     },
     "Andrew": {
@@ -84,10 +84,10 @@
         "name": "Amanda"
     },
     "David": {
-        "rating": 640,
+        "rating": 620,
         "role": 0,
         "role2": 0,
-        "loss_streak": 1,
+        "loss_streak": 2,
         "name": "David"
     },
     "Caydon": {
@@ -112,7 +112,7 @@
         "name": "Harman"
     },
     "Christian": {
-        "rating": 976.09846,
+        "rating": 1012,
         "role": 0,
         "role2": 0,
         "loss_streak": 0,
@@ -140,14 +140,14 @@
         "name": "Kaden"
     },
     "Nathan": {
-        "rating": 962.0313414583333,
+        "rating": 942,
         "role": 3,
         "role2": 2,
-        "loss_streak": 0,
+        "loss_streak": 1,
         "name": "Nathan"
     },
     "Antra": {
-        "rating": 1111.39846,
+        "rating": 1147,
         "role": 2,
         "role2": 1,
         "loss_streak": 0,
@@ -161,10 +161,10 @@
         "name": "Angelina"
     },
     "Catherine": {
-        "rating": 805.82946,
+        "rating": 786,
         "role": 1,
         "role2": 2,
-        "loss_streak": 0,
+        "loss_streak": 1,
         "name": "Catherine"
     }
 }

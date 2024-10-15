@@ -9,9 +9,7 @@ main = Blueprint('main', __name__, template_folder='templates')
 
 @main.route('/', methods=["GET"])
 def upload():
-    player_list = PlayerManager.list_players(True)
-    last_submitted_data = FileManager.open_last_submitted_data()
-    return render_template("create_match.html", players=player_list, last_submitted=last_submitted_data)
+    return render_home_page()
 
 
 @main.route('/list_students', methods=["GET"])
@@ -43,7 +41,7 @@ def upload_new_student_form():
 def submit_student():
     data = request.form.to_dict()
     PlayerManager.SubmitNewStudent(data)
-    return render_template("create_match.html")
+    return render_home_page()
 
 
 @main.route('/create_teams', methods=["GET"])
@@ -65,3 +63,9 @@ def submit_results():
     FileManager.update_last_submitted()
     response_data = {'message': 'Match results received successfully'}
     return jsonify(response_data)
+
+
+def render_home_page():
+    player_list = PlayerManager.list_players(True)
+    last_submitted_data = FileManager.open_last_submitted_data()
+    return render_template("create_match.html", players=player_list, last_submitted=last_submitted_data)

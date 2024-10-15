@@ -124,7 +124,7 @@ def get_average_rating(player_list):
 
 
 def update_player_rating(player, rating_change, is_winning_team: bool):
-    player["rating"] += rating_change
+    player["rating"] = round(player["rating"] + rating_change)
     player["loss_streak"] = 0 if is_winning_team else player.get("loss_streak", 0) + 1
 
 
