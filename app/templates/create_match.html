@@ -11,8 +11,8 @@
 <button type="button" class="btn btn-primary" onclick=create_teams()>Create match</button>
 <button type="button" class="btn btn-primary" onclick=add_new_team()>Custom Match</button>
 
-<label> &emsp;# of Teams &nbsp;</label>
-<select class="number-of-teams">
+<label> &emsp;# of games &nbsp;</label>
+<select class="game-count">
     <option value="1">One</option>
     <option value="2">Two</option>
     <option value="3">Three</option>
@@ -107,9 +107,14 @@
         }).get();
 
         // Holds total number of teams
-        var team_count = parseInt($('.number-of-teams').val(), 10);
+        var game_count = parseInt($('.game-count').val(), 10);
         
-        const player_querys = splitList(player_query, team_count);
+        // check if there atleast 
+        if (player_query.length < game_count * 2) {
+            alert("Need to add atleast 2 players per game")
+            return
+        }
+        const player_querys = splitList(player_query, game_count);
         player_querys.forEach(create_team);
     }
 

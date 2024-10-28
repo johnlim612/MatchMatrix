@@ -144,8 +144,8 @@ button:hover {
 	}
 }
 
-.number-of-teams {
-	width: 4vw;
+.game-count {
+	width: 4.5vw;
 	background-color: #fdfdfd;
 	color: #242424;
 	padding: .15rem .5rem;

@@ -1,170 +1,170 @@
 {
-    "William": {
-        "rating": 1463.044375,
+    "James": {
+        "rating": 1463.04,
         "role": 1,
         "role2": 2,
         "loss_streak": 2,
-        "name": "William"
+        "name": "James"
     },
-    "Emily": {
-        "rating": 1513.156875,
+    "Sarah": {
+        "rating": 1513.16,
         "role": 3,
         "role2": 0,
         "loss_streak": 0,
-        "name": "Emily"
+        "name": "Sarah"
     },
-    "Connor": {
+    "Ethan": {
         "rating": 1526,
         "role": 1,
         "role2": 0,
         "loss_streak": 0,
-        "name": "Connor"
+        "name": "Ethan"
     },
-    "Jieming": {
-        "rating": 1453.18476875,
+    "Lucas": {
+        "rating": 1453.18,
         "role": 1,
         "role2": 0,
         "loss_streak": 1,
-        "name": "Jieming"
+        "name": "Lucas"
     },
-    "Andrea": {
+    "Sophia": {
         "rating": 1313,
         "role": 2,
         "role2": 3,
         "loss_streak": 0,
-        "name": "Andrea"
+        "name": "Sophia"
     },
-    "Andy": {
-        "rating": 1174.3757164583333,
+    "Jack": {
+        "rating": 1174.38,
         "role": 1,
         "role2": 0,
         "loss_streak": 0,
-        "name": "Andy"
+        "name": "Jack"
     },
-    "Hannah": {
+    "Grace": {
         "rating": 1030.0,
         "role": 2,
         "role2": 0,
         "loss_streak": 0,
-        "name": "Hannah"
+        "name": "Grace"
     },
-    "Bryan": {
+    "Adam": {
         "rating": 974,
         "role": 0,
         "role2": 0,
         "loss_streak": 0,
-        "name": "Bryan"
+        "name": "Adam"
     },
-    "Jacob": {
+    "Liam": {
         "rating": 1018,
         "role": 0,
         "role2": 0,
         "loss_streak": 1,
-        "name": "Jacob"
+        "name": "Liam"
     },
-    "Andrew": {
-        "rating": 1146.099464125,
+    "Ryan": {
+        "rating": 1146.1,
         "role": 0,
         "role2": 0,
         "loss_streak": 1,
-        "name": "Andrew"
+        "name": "Ryan"
     },
-    "Ernest": {
-        "rating": 1140.0229546254168,
+    "Henry": {
+        "rating": 1140.02,
         "role": 0,
         "role2": 0,
         "loss_streak": 0,
-        "name": "Ernest"
+        "name": "Henry"
     },
-    "Amanda": {
+    "Olivia": {
         "rating": 1023,
         "role": 2,
         "role2": 0,
         "loss_streak": 4,
-        "name": "Amanda"
+        "name": "Olivia"
     },
-    "David": {
+    "Ben": {
         "rating": 620,
         "role": 0,
         "role2": 0,
         "loss_streak": 2,
-        "name": "David"
+        "name": "Ben"
     },
-    "Caydon": {
+    "Kyle": {
         "rating": 670.0,
         "role": 0,
         "role2": 0,
         "loss_streak": 1,
-        "name": "Caydon"
+        "name": "Kyle"
     },
-    "Kate": {
+    "Megan": {
         "rating": 620,
         "role": 1,
         "role2": 0,
         "loss_streak": 0,
-        "name": "Kate"
+        "name": "Megan"
     },
-    "Harman": {
-        "rating": 877.5572666666667,
+    "Jordan": {
+        "rating": 877.56,
         "role": 1,
         "role2": 0,
         "loss_streak": 1,
-        "name": "Harman"
+        "name": "Jordan"
     },
-    "Christian": {
+    "Isaac": {
         "rating": 1012,
         "role": 0,
         "role2": 0,
         "loss_streak": 0,
-        "name": "Christian"
+        "name": "Isaac"
     },
-    "Irene": {
+    "Lily": {
         "rating": 896,
         "role": 0,
         "role2": 0,
         "loss_streak": 2,
-        "name": "Irene"
+        "name": "Lily"
     },
-    "Ellie": {
-        "rating": 1212.674464125,
+    "Sophie": {
+        "rating": 1212.67,
         "role": 1,
         "role2": 0,
         "loss_streak": 2,
-        "name": "Ellie"
+        "name": "Sophie"
     },
-    "Kaden": {
+    "Owen": {
         "rating": 1288,
         "role": 2,
         "role2": 3,
         "loss_streak": 0,
-        "name": "Kaden"
+        "name": "Owen"
     },
-    "Nathan": {
+    "Logan": {
         "rating": 942,
         "role": 3,
         "role2": 2,
         "loss_streak": 1,
-        "name": "Nathan"
+        "name": "Logan"
     },
-    "Antra": {
+    "Tara": {
         "rating": 1147,
         "role": 2,
         "role2": 1,
         "loss_streak": 0,
-        "name": "Antra"
+        "name": "Tara"
     },
-    "Angelina": {
+    "Rachel": {
         "rating": 742.0,
         "role": 2,
         "role2": 3,
         "loss_streak": 0,
-        "name": "Angelina"
+        "name": "Rachel"
     },
-    "Catherine": {
+    "Zoe": {
         "rating": 786,
         "role": 1,
         "role2": 2,
         "loss_streak": 1,
-        "name": "Catherine"
+        "name": "Zoe"
     }
 }
